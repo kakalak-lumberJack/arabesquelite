@@ -1,8 +1,8 @@
-#arabesque lite
+#Arabesque Lite
 
 Minetest mod adding decorative nodes inspired by Arabic and Islamic architecture and art. This is an light weight version of a more expansive arabesque mod in development.
 
-#Depends
+[b]Depends[/b]
 
 This app depends on default supports stairs or stairsplus (moreblocks)
 
