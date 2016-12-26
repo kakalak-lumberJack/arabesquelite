@@ -43,6 +43,20 @@ local arabesquelite_nodes = {
                 groups = {cracky = 3},
                 sounds = default.node_sound_stone_defaults(),
       },
+
+      ["wood_knot"] = {
+                description = "Wood Knot",
+                tiles = {"arabesquelite_wood_knot.png"},
+                groups = {choppy = 2},
+                sounds = default.node_sound_wood_defaults(),
+      },
+
+      ["wood_panel"] = {
+                description = "Wood Panel",
+                tiles = {"arabesquelite_wood_panel.png"},
+                groups = {choppy = 2},
+                sounds = default.node_sound_stone_defaults(),
+      },
 }
 
 for name, definition in pairs(arabesquelite_nodes) do
@@ -50,8 +64,6 @@ for name, definition in pairs(arabesquelite_nodes) do
 end
 
 --stairsplus (moreblocks) support
-
-
 if minetest.get_modpath("moreblocks") ~= nil then
         for name, definition in pairs(arabesquelite_nodes) do
                 stairsplus:register_all("stairs", name, "arabesquelite:"..name, {
@@ -62,6 +74,7 @@ if minetest.get_modpath("moreblocks") ~= nil then
                               sounds = default.node_sound_stone_defaults()
         })
         end
+--stairs support
 elseif minetest.get_modpath("stairs") ~=nil then
         for name, definition in pairs(arabesquelite_nodes) do
 
@@ -124,5 +137,23 @@ minetest.register_craft({
               {"default:gold_ingot", "default:stone", "default:gold_ingot"},
               {"default:stone", "dye:white", "default:stone"},
               {"default:gold_ingot", "default:stone", "default:gold_ingot"}
+        }
+})
+
+minetest.register_craft({
+        output = "arabesquelite:wood_knot 5",
+        recipe = {
+              {"default:wood", "", "default:wood"},
+              {"", "default:wood", ""},
+              {"default:wood", "", "default:wood"}
+        }
+})
+
+minetest.register_craft({
+        output = "arabesquelite:wood_panel 4",
+        recipe = {
+              {"", "", ""},
+              {"default:wood", "default:wood", ""},
+              {"default:wood", "default:wood", ""}
         }
 })
